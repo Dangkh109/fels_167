@@ -1,24 +1,3 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   home_title: "Home"
   help_title: "Help"
@@ -27,14 +6,28 @@ en:
   logout_title: "Logout"
   profile_title: "Profile"
   setting_title: "Setting"
-  user_title: "User"
+  user_title: "Users"
   intro: "Easy to use - Easy to learn"
   account_title: "Account"
   e_learning: "E Learning"
   willbesoon: "This app will be appeared soon!!"
   address: "Address: 18F KeangNam, Tu Liem, Ha Noi"
-  app_title: "| TD E Learning"
+  app_title: "| E Learning"
   signup_title: "Sign up"
   new_user: "New user, Sign up now to try the best"
   login_false: "Invalid email/password combination"
   login_success: "Login successful"
+  sign_up_title: "Sign Up"
+  form_user_sign_up_button: "Create my account!"
+  sign_up_successful: "Sign up successful. Please login to participate!"
+  female: "Female"
+  male: "Male"
+  password_confirm: "Confirmation"
+  categories_title: "Categories"
+  progress: "70% completed"
+  sort_title: "Sort_by"
+  name_title: "Name"
+  time_title: "Time"
+  apply_title: "Apply"
+  name: "name"
+  time: "time"

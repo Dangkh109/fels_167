@@ -1,0 +1,40 @@
+<%= form_for @user, html:{multipart: true} do |f| %>
+  <div class="form-group">
+    <%= render "shared/errors", object: f.object %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+
+    <%= f.label :email %>
+    <%= f.email_field :email, class: "form-control" %>
+
+    <%= f.label :phone %>
+    <%= f.text_field :phone, class: "form-control" %>
+
+    <%= f.label :address %>
+    <%= f.text_field :address, class: "form-control" %>
+
+    <%= f.label :sex %>
+    <div class="radioGroup">
+      <span>
+        <%= f.radio_button :sex, true, checked: true %>
+        <%= f.label :sex, t(:male) %>
+      </span>
+      <span>
+        <%= f.radio_button :sex, false %>
+        <%= f.label :sex, t(:female) %>
+      </span>
+    </div>
+
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password, class: "form-control" %>
+
+    <%= f.label :password_confirmation, t(:password_confirm) %>
+    <%= f.password_field :password_confirmation, class: "form-control" %>
+
+    <%= f.submit t(:form_user_sign_up_button), class: "btn btn-primary" %>
+  </div>
+<% end %>

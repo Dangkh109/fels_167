@@ -1,0 +1,17 @@
+<% provide :title, @category.name %>
+<div class="row">
+  <aside class="col-md-2">
+
+  </aside>
+  <aside class="col-md-1"></aside>
+  <aside class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2 class="center"><%= @category.name %></h2>
+      </div>
+      <div class="panel-body">
+        <p class="divide"><%= @category.description %></p>
+      </div>
+    </div>
+  </aside>
+</div>

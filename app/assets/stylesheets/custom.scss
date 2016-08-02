@@ -34,7 +34,6 @@ h2{
   font-size: 1.2em;
   letter-spacing: -1px;
   margin-bottom: 30px;
-  text-align: center;
   font-weight: normal;
   color: #777;
 }
@@ -47,6 +46,7 @@ p{
 }
 #my-style-h2{
   margin-left: -120px;
+  text-align: center;
 }
 #my-font{
   font-style: italic;
@@ -73,13 +73,17 @@ p{
 
 /*footer*/
 footer {
-  position: absolute;
+  position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
+  margin-left: 150px;
+  margin-right: 100px;
+  background-color: white;
   /*padding: 1rem;*/
   width: 100%;
   height: 50px;
+
 }
 footer a {
   color: #555;
@@ -109,12 +113,11 @@ footer ul li {
   width: 380px;
 }
 .myfooter{
-    margin: auto;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-    margin-right: 0px;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  margin-right: 0px;
 }
 
 /*debug*/
@@ -216,37 +219,6 @@ input {
   }
 }
 
-/*microposts*/
-.microposts {
-  list-style: none;
-  padding: 0;
-  li {
-    padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
-  }
-  .user {
-    margin-top: 5em;
-    padding-top: 0;
-  }
-  .content {
-    display: block;
-    margin-left: 60px;
-    img {
-      display: block;
-      padding: 5px 0;
-    }
-  }
-  .timestamp {
-    color: $gray-light;
-    display: block;
-    margin-left: 60px;
-  }
-  .gravatar {
-    float: left;
-    margin-right: 10px;
-    margin-top: 5px;
-  }
-}
 aside {
   textarea {
     height: 100px;
@@ -330,4 +302,42 @@ span.picture {
 }
 .my-width{
   width: 250px;
+}
+
+/* sign up */
+.radioGroup{
+  display: block;
+  span{
+    display: inline-block;
+  }
+  label{
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+.my-avatar-home{
+  width: 50px;
+  height: 50px;
+}
+.my-username{
+  font-size: 20px;
+  margin-left: 5px;
+  font-style: none;
+  font-weight: 0.5px;
+}
+.my-h1{
+  text-align: center;
+}
+.my-margin-right{
+  float: right;
+  margin-right: 80px;
+}
+.affix {
+  top: 0;
+  width: 100%;
+}
+
+.affix + .container-fluid {
+  padding-top: 70px;
 }

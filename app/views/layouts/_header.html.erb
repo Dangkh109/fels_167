@@ -19,7 +19,8 @@
               <li><%= link_to t(:help_title), help_path,
                 id: "word-header" %></li>
               <% if logged_in? %>
-                <li><%= link_to t(:user_title), "#", id: "word-header" %></li>
+                <li><%= link_to t(:user_title), users_path,
+                  id: "word-header" %></li>
                 <li class="dropdown">
                 <%= link_to t(:account_title), "#", "data-toggle": "dropdown",
                   class: "dropdown-toggle", id: "word-header" %>

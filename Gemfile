@@ -1,5 +1,9 @@
 source "https://rubygems.org"
-
+#gem config
+gem "config"
+# paginate
+gem "will_paginate",           "3.1.0"
+gem "bootstrap-will_paginate", "0.0.10"
 #bootstrap
 gem "bootstrap-sass", "3.3.6"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"

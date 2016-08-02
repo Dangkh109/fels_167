@@ -1,3 +1,4 @@
-<%provide :title, t(:home_title) %>
-<h1><%= t(:home_title) %></h1>
-<p><%= t(:willbesoon) %></p>
+<% provide :title, t(:home_title) %>
+<% unless logged_in? %>
+  <%= render "shared/login" %>
+<% end %>

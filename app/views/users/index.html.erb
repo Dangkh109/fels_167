@@ -1,0 +1,24 @@
+<%= provide :title, current_user.name %>
+<div class="row">
+  <aside class="col-md-2">
+    <div class="panel panel-primary center">
+      <div class="panel-heading"><h1><%= t :profile_title %></h1></div>
+      <div class="panel-body">
+        <%= link_to avatar_for(current_user), current_user %>
+        <h1 class="my-username"><%= link_to current_user.name, current_user %></h1>
+      </div>
+    </div>
+  </aside>
+  <aside class="col-md-1"></aside>
+  <aside class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading center"><h1><%= t :user_all %></h1></div>
+      <div class="panel-body">
+        <ul class="users">
+          <%= render @users %>
+        </ul>
+        <div class="center"><%= will_paginate %></div>
+      </div>
+    </div>
+  </aside>
+</div>

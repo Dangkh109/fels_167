@@ -1,0 +1,36 @@
+<%= provide :title, t(:categories_title) %>
+<div class="row">
+  <aside class="col-md-2">
+    <div class="panel panel-default">
+      <div class="panel-heading center"><h2><%= t :sort_title %></h2></div>
+      <div class="panel-body">
+        <%= form_for :categories, method: :get do |f| %>
+          <span>
+            <%= f.radio_button :sort, :name, checked: true %>
+            <%= f.label :sort, t(:name_title) %>
+          </span>
+          <span>
+            <%= f.radio_button :sort, :time, checked: false %>
+            <%= f.label :sort2, t(:time_title) %>
+          </span>
+          <%= f.submit t(:apply_title), class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </aside>
+  <aside class="col-md-1"></aside>
+  <aside class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading center"><h1><%= t :categories_title %></h1></div>
+      <div class="panel-body">
+        <div class="row">
+        </div>
+        <ul class="users">
+          <%= render @categories %>
+        </ul>
+        <div class="center"><%= will_paginate %></div>
+      </div>
+    </div>
+  </aside>
+</div>
+

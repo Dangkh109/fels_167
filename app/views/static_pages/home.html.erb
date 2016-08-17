@@ -1,2 +1,6 @@
 <% provide :title, t(:home_title) %>
-<%= render "shared/login" unless logged_in? %>
+<% unless logged_in? %>
+  <%= render "shared/login" %>
+<% else %>
+  <%= render "shared/home_logged_in"%>
+<% end %>

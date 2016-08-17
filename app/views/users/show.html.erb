@@ -6,6 +6,11 @@
       <div class="panel-body">
         <%= link_to avatar_for(current_user), current_user %>
         <h1 class="my-username"><%= link_to @user.name, @user %></h1>
+        <% if current_user.is_user? @user%>
+          <button type="button" class="btn btn-warning">
+            <%= link_to t(:result_all), results_path, id: "word-header" %>
+          </button>
+        <% end %>
       </div>
     </div>
   </aside>
@@ -19,7 +24,7 @@
           <% @activities.each do |activity| %>
             <tr>
               <td>
-                <b><%= @user.name %></b> 
+                <b><%= @user.name %></b>
                 <%= link_to activity.content, activity.link %>
                 <%= "#{t :at} #{activity.created_at.
                   strftime(Settings.activity_time_format)}" %>
@@ -27,8 +32,8 @@
             </tr>
           <% end %>
         </table>
+        <div class="center"><%= will_paginate @activities %></div>
       </div>
     </div>
   </aside>
 </div>
-<%= will_paginate @activities %>

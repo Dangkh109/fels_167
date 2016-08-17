@@ -427,3 +427,67 @@ span.picture {
 .limit-height{
   height: 100px;
 }
+#header-image-size{
+  height: 70;
+  width: 300;
+}
+.full-height{
+  height: 100%;
+}
+.left-border{
+  border-left-style: inset;
+  border-left-width: 1px;
+}
+.scroll{
+  overflow: scroll;
+}
+marquee{
+  font-size: 25px;
+  height: 10%;
+}
+.home-page-panel{
+  height: 40px;
+}
+.panel-height-home{
+  height: 90%;
+}
+.inline-display{
+  display: inline;
+}
+.footer-logo-size{
+  height: 50px;
+  width: 100px;
+}
+.header-logo-size{
+  height: 80px;
+  width: 190px;
+}
+.header-bar-size{
+  height: 80px;
+  width: 300px;
+}
+.login-image-size{
+  width: 700px;
+  height: 400px;
+}
+.row-home-height{
+  height: 500px;
+}
+.home-right-link{
+  position: absolute;
+  right: 20px;
+  bottom: 0px;
+}
+.no-space-lesson-tab{
+  padding: 0;
+  margin: 0;
+}
+.header-logo{
+  display: inline-block;
+  border-right-style: inset;
+  border-right-width: 2px;
+  height: 100%;
+  border-right-color: #FFE4C4;
+  background-color: #FFE4C4;
+  border-radius: 5px;
+}

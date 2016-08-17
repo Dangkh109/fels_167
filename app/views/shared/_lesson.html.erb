@@ -1,0 +1,14 @@
+<ul class="users">
+  <li class="row">
+    <aside class="col-md-4">
+      <%= link_to lesson.category.name, lesson.category %>
+      <%= "#{I18n.t(:at)}
+        #{lesson.created_at.to_time.strftime Settings.activity_time_format}" %>
+    </aside>
+    <aside>
+      <button type="button" class="btn btn-warning my-margin-right">
+        <%= link_to t(:do), lesson_path(id: lesson.id), id: "word-header" %>
+      </button>
+    </aside>
+  </li>
+</ul>

@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(user_params[:password])
       login user
       flash[:success] = t :login_success
-      redirect_to help_path
+      redirect_to root_path
     else
       flash[:danger] = t :login_false
       render :new

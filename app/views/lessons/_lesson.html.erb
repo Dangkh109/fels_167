@@ -4,13 +4,13 @@
       <%= link_to lesson.id, lesson %>
     </div>
     <div class="my-margin-right inline-display">
+      <%= t :created_at %>
       <%= lesson.created_at.to_time.strftime Settings.activity_time_format %>
     </div>
   </div>
   <div>
     <% if lesson.is_completed %>
-      <%= t :score %>
-      <%= "#{lesson.results.select{|x| x.is_correct}.size()}" %>
+      <%= "#{I18n.t(:score)} #{lesson.results.select{|x| x.is_correct}.size()}" %>
       <button type="button" class="btn btn-primary my-margin-right">
         <%= link_to t(:see_result), result_path(id: lesson.id),
           id: "word-header" %>

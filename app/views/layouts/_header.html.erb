@@ -1,9 +1,16 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div id="my-header-color">
-    <div class="container">
-      <%= link_to image_tag("logo_framgia.png", height: 80, width: 80),
-        root_path %>
-      <%= link_to t(:Elearning), root_path, id: "logo" %>
+    <div class="container my-header">
+      <div class="header-logo">
+        <%= link_to image_tag("logo_framgia.png", class: "header-logo-size"),
+          root_path %>
+      </div>
+      <%= link_to image_tag("2i.jpg", class: "header-bar-size"),
+        root_path, id: "item-headerl" %>
+      <%= link_to image_tag("3i.jpg", class: "header-bar-size"),
+        root_path, id: "item-headerm" %>
+      <%= link_to image_tag("1i.jpg", class: "header-bar-size"),
+        root_path, id: "item-headerr" %>
     </div>
   </div>
   <div id="my-background-color">
@@ -22,18 +29,19 @@
                 <li><%= link_to t(:user_title), users_path,
                   id: "word-header" %></li>
                 <li class="dropdown">
-                <%= link_to t(:account_title), "#", "data-toggle": "dropdown",
-                  class: "dropdown-toggle", id: "word-header" %>
-                <ul class="dropdown-menu">
-                  <li><%= link_to t(:profile_title), current_user %></li>
-                  <li>
-                    <%= link_to t(:setting_title),
-                      edit_user_path(current_user) %>
-                  </li>
-                  <li class="divider"></li>
-                  <li> <%= link_to t(:logout_title), logout_path,
-                    method: "delete" %></li>
-                </ul>
+                  <%= link_to t(:account_title), "#", "data-toggle": "dropdown",
+                    class: "dropdown-toggle", id: "word-header" %>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to t(:profile_title), current_user %></li>
+                    <li>
+                      <%= link_to t(:setting_title),
+                        edit_user_path(current_user) %>
+                    </li>
+                    <li class="divider"></li>
+                    <li> <%= link_to t(:logout_title), logout_path,
+                      method: "delete" %></li>
+                  </ul>
+                </li>
               <% else %>
                 <li><%= link_to t(:login_title), login_path,
                   id: "word-header" %></li>

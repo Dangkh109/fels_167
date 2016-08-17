@@ -1,12 +1,15 @@
 class CategoriesController < ApplicationController
   def index
     if params[:categories].nil?
-      @categories = Category.order(:name).paginate page: params[:page]
+      @categories = Category.order(:name).paginate page: params[:page],
+        per_page: Settings.per_page
     else
       if params[:categories][:sort] == t(:time)
-        @categories = Category.order(:created_at).paginate page: params[:page]
+        @categories = Category.order(:created_at).paginate page: params[:page],
+          per_page: Settings.per_page
       else
-        @categories = Category.order(:name).paginate page: params[:page]
+        @categories = Category.order(:created_at).paginate page: params[:page],
+          per_page: Settings.per_page
       end
     end
   end

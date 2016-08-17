@@ -2,7 +2,8 @@ class ResultsController < ApplicationController
   before_action :find_category
   def index
     if params[:category_id].nil?
-      @lessons = current_user.lesson.select{|x| x.is_completed}
+      @lessons = current_user.lesson.select{|x| x.is_completed}.sort{
+        |x,y| y.updated_at <=> x.updated_at}
       @results = @lessons.paginate page: params[:page],
         per_page: Settings.per_page
     else
@@ -10,8 +11,9 @@ class ResultsController < ApplicationController
         flash[:danger] = t :not_exist_data
         redirect_to results_path
       else
-        @lessons = current_user.lesson.select{|x| x.is_completed &&
-          x.category_id == @category.id}
+        @lessons = current_user.lesson.select{
+          |x| x.is_completed && x.category_id == @category.id}.sort{
+          |x,y| y.updated_at <=> x.updated_at}
         @results = @lessons.paginate page: params[:page],
           per_page: Settings.per_page
       end

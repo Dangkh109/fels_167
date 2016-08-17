@@ -172,3 +172,12 @@ $(document).on 'ready page:load', ->
 
   $('.radioGroup').click ->
     $('.num_answers').text $('li :checked').size()
+
+  setInterval (->
+    tmp = $('#item-headerl').children('img').attr('src')
+    $('#item-headerl').children('img').attr 'src',
+      $('#item-headerm').children('img').attr('src')
+    $('#item-headerm').children('img').attr 'src',
+      $('#item-headerr').children('img').attr('src')
+    $('#item-headerr').children('img').attr 'src', tmp
+    return), 5000

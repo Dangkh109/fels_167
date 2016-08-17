@@ -23,8 +23,9 @@
       <div class="panel-body">
         <p class="divide"><%= @category.description %></p>
         <button type="button" class="btn btn-warning btn-width-lesson">
-          <%= link_to t(:see_word_list), root_path, id: "word-header" %>
+          <%= link_to t(:see_word_list), category_words_path(@category), id: "word-header" %>
         </button><br>
+        <br>
         <button type="button" class="btn btn-warning btn-width-lesson">
           <%= link_to t(:see_lesson_list), category_lessons_path(@category),
             id: "word-header" %>

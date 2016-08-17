@@ -1,6 +1,9 @@
 <li>
-  <%= link_to category.name, category %>
-  <p class="my-margin-right">
+  <div class="inline-display">
+    <%= link_to category.name, category %>
+    <span class="badge"><%= category.words.size() %></span>
+  </div>
+  <div class="my-margin-right">
     <%= category.created_at.to_time.strftime(Settings.activity_time_format) %>
-  </p>
+  </div>
 </li>

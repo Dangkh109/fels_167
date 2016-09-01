@@ -7,14 +7,13 @@ action_type:
   unfollow: 2
   followed: 3
   unfollowed: 4
-  learn: 5
+  create_lesson: 5
   login: 6
-  create_a_category: 7
-  destroy_a_category: 8
-  edit_a_category: 9
-  create_a_word: 10
-  destroy_a_word: 11
-  edit_a_word: 12
+  create_category: 7
+  destroy_category: 8
+  create_word: 9
+  destroy_word: 10
+  finish_lesson: 11
 activity_time_format: "%H:%M:%S %d/%m/%Y"
 max_num_word_answer: 6
 min_num_word_answer: 4

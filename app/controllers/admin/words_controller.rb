@@ -5,7 +5,7 @@ class Admin::WordsController < ApplicationController
   before_action :load_category, only: [:index, :create, :destroy, :update]
 
   def index
-    @words = @category.words.order(created_at: :desc).paginate page: 
+    @words = @category.words.order(created_at: :desc).paginate page:
       params[:page], per_page: Settings.per_page
     @previous_category = previous_category @category.id
     @next_category = next_category @category.id
@@ -17,14 +17,15 @@ class Admin::WordsController < ApplicationController
     unless correct_answer.nil?
       @word.word_answers[correct_answer].is_correct = true
       if @word.save
+        @word.create_activitie_create_word current_user.id
         new_word = to_json @word, correct_answer
-        respond_to do |format|      
+        respond_to do |format|
           format.json {render json: new_word}
         end
       end
     end
   end
-  
+
   def destroy
     if params[:word_ids].nil?
       @words = @category.words.find_by params[:id]

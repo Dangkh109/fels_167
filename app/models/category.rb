@@ -1,4 +1,5 @@
 class Category < ActiveRecord::Base
+  include Rails.application.routes.url_helpers
   has_many :lessons
   has_many :words, dependent: :destroy
   scope :previous, ->(id) {where("id < ?", id).last}
@@ -16,5 +17,11 @@ class Category < ActiveRecord::Base
         return @categories
       end
     end
+  end
+
+  def create_activitie_create_category id
+    Activity.create action_type: Settings.action_type.create_category,
+      user_id: id, target_id: self.id,
+      content: I18n.t(:create_category), link: admin_category_path(id: self.id)
   end
 end

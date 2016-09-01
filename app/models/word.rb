@@ -1,4 +1,5 @@
 class Word < ActiveRecord::Base
+  include Rails.application.routes.url_helpers
   belongs_to :category
   has_many :word_answers, dependent: :destroy
   accepts_nested_attributes_for :word_answers, allow_destroy: true,
@@ -17,6 +18,12 @@ class Word < ActiveRecord::Base
         return @words
       end
     end
+  end
+
+  def create_activitie_create_word id
+    Activity.create action_type: Settings.action_type.create_word, user_id: id,
+      target_id: self.id, content: I18n.t(:create_word),
+      link: admin_category_words_path(category_id: self.category_id)
   end
 
   private

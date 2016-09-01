@@ -12,6 +12,7 @@ class Admin::CategoriesController < ApplicationController
     @category = Category.new category_params
     respond_to do |format|
       if @category.save
+        @category.create_activitie_create_category current_user.id
         format.json {render json: to_json(@category)}
       end
     end

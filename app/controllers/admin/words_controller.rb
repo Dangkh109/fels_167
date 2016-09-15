@@ -27,7 +27,8 @@ class Admin::WordsController < ApplicationController
   
   def destroy
     if params[:word_ids].nil?
-      if @category.words.destroy params[:id]
+      @words = @category.words.find_by params[:id]
+      if @words && @words.destroy
         flash[:success] = t(:delete_success)
       else
         flash[:danger] = t(:delete_fail)

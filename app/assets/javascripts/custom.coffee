@@ -67,7 +67,10 @@ $(document).on 'ready page:load', ->
     res += result.id
     res += '" type="checkbox"></td>'
     res += '<input name="id" id="id" value="' + result.id + '" type="hidden">'
-    res += '<td class="col-md-2 text-center">' + result.name + '</td>'
+    res += '<td class="col-md-2 text-center">'
+    res += '<a href="/admin/categories/' + result.id + '/words">' 
+    res += result.name + '</a>'
+    res += '</td>'
     res += '<td class="col-md-3 text-center">' + result.description + '</td>'
     res += '<td class="col-md-5 text-center">' + result.numberWords + '</td>'
     res += '<td class="text-center"><a data-toggle="tooltip" title="Edit" '

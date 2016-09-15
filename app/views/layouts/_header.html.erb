@@ -26,6 +26,12 @@
               <li><%= link_to t(:help_title), help_path,
                 id: "word-header" %></li>
               <% if logged_in? %>
+                <li>
+                  <% if current_user.is_admin %>
+                    <%= link_to t(:categories), admin_categories_path,
+                      id: "word-header" %>
+                  <% end %>
+                </li>
                 <li><%= link_to t(:user_title), users_path,
                   id: "word-header" %></li>
                 <li class="dropdown">

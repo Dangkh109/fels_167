@@ -35,4 +35,8 @@ class User < ActiveRecord::Base
   def check_following user
     following.include? user
   end
+
+  def is_admin?
+    self.is_admin
+  end
 end

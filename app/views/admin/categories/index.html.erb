@@ -37,7 +37,9 @@
           <td class="col-md-1"><%= check_box_tag "category_ids[]",
             category.id, false %></td>
           <%= hidden_field_tag "id", category.id %>
-          <td class="col-md-2" id="name"><%= category.name %></td>
+          <td class="col-md-2" id="name">
+            <%= link_to category.name, admin_category_words_path(category) %>
+          </td>
           <td class="col-md-3" id="description">
             <%= category.description %>
           </td>

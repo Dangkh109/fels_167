@@ -28,19 +28,20 @@ User.create! name: "kieudang", email: "kieudang@gmail.com",
     content = Faker::Name.title
     category_id = Faker::Number.between 1, 20
     word = Word.create! content: content, category_id: category_id
+    word_answers = word.word_answers.all
     Activity.create! action_type: 10, user_id: 1,
       target_id: word.id, content: action_type[9],
       link: "/categories/#{category_id}/words/#{word.id}"
     answer_content = Faker::Name::title
     is_correct = true
-    WordAnswer.create! content: answer_content, is_correct: is_correct,
-      word_id: word.id
-    3.times{
+    word_answers[0].update_attributes! content: answer_content,
+      is_correct: is_correct
+    (1..3).each do |i|
       answer_content = Faker::Name::title
       is_correct = false
-      WordAnswer.create! content: answer_content, is_correct: is_correct,
-        word_id: word.id
-    }
+      word_answers[i].update_attributes! content: answer_content,
+        is_correct: is_correct
+    end
   }
 }
 Activity.create! action_type: 1, user_id: 2,

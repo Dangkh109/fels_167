@@ -14,7 +14,8 @@
           <% end %>
         </div>
         <div class="col-md-8 text-center">
-          <%= @category.name %>
+          <%= link_to @category.name, admin_categories_path,
+            class: "previous" %>
         </div>
         <div class="col-md-2 text-right">
           <% unless @next_category.nil? %>
